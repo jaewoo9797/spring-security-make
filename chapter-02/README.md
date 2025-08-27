@@ -33,3 +33,9 @@
 > 이 유연성 때문에 혼란을 느끼거나 복잡해질 수 있다. 이는 바람직하지 않다. 즉, 유연성을 남용해서는 안 된다.   
 
 `UserDetailsService`와 `PasswordEncoder` 를 구성하는 방법을 배운다.
+
+### 구성 재정의 변경점
+> [!IMPORTANT]
+> `WebSecurityConfigurerAdapter` 는 지원이 중단되어 더 이상 사용하지 않습니다.
+
+[Spring Docs-구성하는 방법](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/index.html)
