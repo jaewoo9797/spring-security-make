@@ -69,7 +69,7 @@
 
 이제 이들 구성 요소에 작업을 위임하는 `AuthenticationProvider`를 맞춤 구성할 수 있습니다.
 
-> [!INFO]
+> [!NOTE]
 > `Authentication Provider`는 인증 논리를 구현합니다. `Manager`에게 요청을 받은 후 사용자를 찾는 작업을 `UserDetailsSerivce`에, 
 > 암호를 검증하는 작업을 `PasswordEncoder`에 위임합니다.
 
