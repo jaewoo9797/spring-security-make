@@ -39,3 +39,23 @@
 > `WebSecurityConfigurerAdapter` 는 지원이 중단되어 더 이상 사용하지 않습니다.
 
 [Spring Docs-구성하는 방법](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/index.html)
+
+### `AuthenticationManager` 빈 구성
+앞서 `UserDetailsService`, `PasswordEncoder` 객체를 빈으로 등록하여 자동으로 `AuthenticationProvider` 에 등록했습니다.
+
+이번에는 다른 방식인 `AuthenticationManager`를 빈으로 등록하여 두 객체를 등록하는 방법에 대해서 알아보겠습니다.
+
+<img src="https://docs.spring.io/spring-security/reference/_images/servlet/authentication/unpwd/daoauthenticationprovider.png" width="700px" height="auto">
+
+`AuthenticationManager` 에는 여러 `ProviderManager` 를 등록하고 특정 유형에 맞는 Provider를 이용해서 인증을 할 수 있습니다.   
+[Spring - AuthenticationManager](https://docs.spring.io/spring-security/reference/servlet/authentication/architecture.html#servlet-authentication-authenticationprovider)
+
+- spring security provider 는 기본적으로 유저이름과 패스워드 기반으로 인증한다.
+- `DaoAuthenticationProvider`
+- HttpBasic -> `BasicAuthenticationFilter` 가 필터 체인에 등록된다.
+- 필터가 아이디 패스워드를 추출하여 `AuthenticationManager`에게 위임합니다.
+
+<img src="./image/security-architecture.png" width="400px" height="auto">
+
+시큐리티는 사용자의 요청을 가로채서 등록된 필터를 이용하여 인증 인가를 처리합니다.   
+여러 필터를 등록해서 적절한 처리를 할 수 있습니다. 하지만, 우선 책의 흐름에 따라서 기본적인 흐름을 학습을 우선합니다.
