@@ -5,7 +5,7 @@ plugins {
 }
 
 allprojects {
-    group = 'study'
+    group = 'securitymake'
     version = '0.0.1-SNAPSHOT'
     description = 'make spring security'
 
