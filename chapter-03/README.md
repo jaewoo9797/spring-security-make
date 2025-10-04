@@ -31,3 +31,5 @@ Spring 에서는 예외를 핸들링하기 위해서 `ControllerAdvice` 의 `@Ex
 왜냐하면, 스프링 시큐리티는 스프링이 관리하는 컨텍스트 전에 `Tomcat` 의 `Filter` 단에서 인터셉터되어 처리되기 떄문입니다.
 
 <img src="./image/Security%20Architecture.png" alt="Security Architecture" width="900px" height="auto">
+
+이를 해결하기 위해서 `Handler` 를 구현하여 필터 체인에 등록해주어야 정상적으로 예외를 반환해줄 수 있습니다.
