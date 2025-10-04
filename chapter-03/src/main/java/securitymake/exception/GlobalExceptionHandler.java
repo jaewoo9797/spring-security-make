@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(AuthenticationException.class)
-    protected ResponseEntity<?> handleAuthenticationException(AuthenticationException exception) {
+    protected ResponseEntity<ErrorResponse> handleAuthenticationException(AuthenticationException exception) {
         log.error("AuthenticationException : {}", exception.getMessage(), exception);
         ErrorResponse errorResponse = new ErrorResponse(exception.getMessage());
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);

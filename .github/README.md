@@ -6,9 +6,10 @@
 각 챕터별로 예제 코드와 학습 내용을 기록하며, 실습 과정을 직접 따라하며 이해도를 높이고자 합니다.
 
 ### 구성
-- `chapter-02/` : [인증 처리 로직을 위한 구성 만들기](https://github.com/jaewoo9797/spring-security-make/blob/main/chapter-02/README.md)
-- `chapter-03/` : [UserDetailsService를 통해 인증 로직 구현하기](https://github.com/jaewoo9797/spring-security-make/tree/main/chapter-03)
-- `chapter-04/` :
+
+- `chapter-02/` : 인증 처리 로직을 위한 구성 만들기 [👉🏻 정리](https://github.com/jaewoo9797/spring-security-make/wiki/02%E2%80%90%EC%9D%B8%EC%A6%9D-%EC%B2%98%EB%A6%AC-%EB%A1%9C%EC%A7%81)
+- `chapter-03/` : 사용자 관리 [👉🏻 정리](https://github.com/jaewoo9797/spring-security-make/wiki/03%E2%80%90%EC%82%AC%EC%9A%A9%EC%9E%90-%EA%B4%80%EB%A6%AC)
+- `chapter-04/` : `PasswordEncoder` 암호 인증 [👉🏻 정리](https://github.com/jaewoo9797/spring-security-make/wiki/04_PasswordEncoder)
 - `chpater-05/` :
 
 ### 목표
