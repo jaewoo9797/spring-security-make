@@ -1,0 +1,8 @@
+server:
+  port: 9090
+
+auth:
+  server:
+    base.url: http://localhost:8080
+
+jwt.signing.key: this-is-a-very-secure-jwt-secret-key-with-at-least-32-bytes
