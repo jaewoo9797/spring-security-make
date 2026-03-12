@@ -8,7 +8,6 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -19,20 +18,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests((authorize) -> authorize
-                .anyRequest().authenticated()
-            )
-            .httpBasic(Customizer.withDefaults());
+                .authorizeHttpRequests((authorize) -> authorize
+                        .anyRequest().authenticated()
+                )
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
 
     @Bean
     public AuthenticationManager authenticationManagerBean(
-        UserDetailsService userDetailsService,
-        PasswordEncoder passwordEncoder
+            PasswordEncoder passwordEncoder
     ) {
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(userDetailsService);
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(passwordEncoder);
         authenticationProvider.setPasswordEncoder(passwordEncoder);
         return new ProviderManager(authenticationProvider);
     }

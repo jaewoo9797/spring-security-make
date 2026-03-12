@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring11
+    username: security11
+    password: 1q2w3e4r!!
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
