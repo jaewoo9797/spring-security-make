@@ -2,7 +2,6 @@ package securitymake.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.oauth2.client.CommonOAuth2Provider;
@@ -16,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class ProjectConfig {
 
 	@Bean
-	public ClientRegistrationRepository clientRegistrationRepository() {
+	public ClientRegistrationRepository clientRepository() {
 		return new InMemoryClientRegistrationRepository(this.clientRegistration());
 	}
 
@@ -31,7 +30,9 @@ public class ProjectConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-			.oauth2Login(Customizer.withDefaults());
+			.oauth2Login((oauth2) -> oauth2
+				.clientRegistrationRepository(clientRepository())
+			);
 
 		http
 			.authorizeHttpRequests(auth ->
